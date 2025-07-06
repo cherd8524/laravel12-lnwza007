@@ -1,4 +1,4 @@
-<x-active-bootstrap title="Home - Active Bootstrap Template">
+<x-active-bootstrap title="Home - Active Bootstrap Template" page="home">
 
   <!-- About Section -->
   <section id="about" class="about section">

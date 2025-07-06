@@ -1,4 +1,4 @@
-<x-active-bootstrap title="Portfolio - Active Bootstrap Template">
+<x-active-bootstrap title="Portfolio - Active Bootstrap Template" page="portfolio">
 
     <!-- Page Title -->
     <div class="page-title light-background">
