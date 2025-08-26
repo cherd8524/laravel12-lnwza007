@@ -4,6 +4,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\NewsController;
 
 Route::get('/', function () {
     return redirect('/index');
@@ -96,6 +97,13 @@ Route::get('product/form', function () {
 Route::get('barchart', function () {    
     return view('barchart');
 })->name('barchart');
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+// - Project 24/08/2025
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+Route::get('/news/sport', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/sport/{id}', [NewsController::class, 'show'])->name('news.show');
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
