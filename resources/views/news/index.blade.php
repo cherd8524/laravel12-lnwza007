@@ -32,11 +32,11 @@
                             </div>
                             <div class="card-footer ">
                                 <div class="row">
-                                    <div class="col-lg-10">
+                                    <div class="col col-lg-10">
                                         <i class="bi bi-clock me-2"></i>
                                         {{ $firstNews->published_at->diffForHumans() }}
                                     </div>
-                                    <div class="col-lg-2 text-end">
+                                    <div class="col col-lg-2 text-end">
                                         <a href="{{ $firstNews->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
                                             <i class="bi bi-link-45deg fs-5"></i>
                                         </a>
