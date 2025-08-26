@@ -18,7 +18,7 @@
             <div class="col-lg-12 p-2">
                 <div class="card ">
                     <div class="row p-2">
-                        <div class="col-lg-8 pe-0">
+                        <div class="col-lg-8 pe-lg-0">
                             <a href="{{ route('news.show', $firstNews->id) }}">
                                 <img src="{{ $firstNews->topic_image_url }}" class="img-fluid rounded" alt="image">
                             </a>
