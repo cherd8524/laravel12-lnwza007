@@ -64,12 +64,20 @@
     </div>
     
     <footer class="py-3 shadow-lg container-fluid">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <ul class="nav justify-content-center pb-3">
             <li class="nav-item"><a href="{{ route('news.index') }}" class="nav-link px-2 text-body-secondary">หน้าหลัก</a></li>
             <!-- <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 2</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 3</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 4</a></li> -->
         </ul>
+        <div class="row border-bottom pb-3 mb-3">
+            <div class="col-lg-12 text-center">
+                เว็บไซต์นี้จัดทำขึ้นเพื่อใช้ในการศึกษาเท่านั้น เนื้อหาโดย : 
+                <a href="https://www.sanook.com/sport/" target="_blank">
+                    <img src="https://s.isanook.com/sr/0/images/logo-sanook-n.svg" alt="sanook-logo" width="100">
+                </a>
+            </div>
+        </div>
         <div class="row px-lg-5">
             <div class="col-lg-6 col-12 mx-auto">
                 <div class="row m-0 p-0">
