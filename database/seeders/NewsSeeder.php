@@ -902,7 +902,7 @@ class NewsSeeder extends Seeder
                     ]
                 ], JSON_UNESCAPED_UNICODE),
                 'reference_url' => 'https://www.sanook.com/sport/1614925/',
-            ],
+            ]
         ]);
     }
 }
