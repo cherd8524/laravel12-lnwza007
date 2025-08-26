@@ -13,7 +13,7 @@
             $firstNews = $news->first();
         @endphp
 
-        <div class="row px-5">
+        <div class="row px-lg-5">
             @if($firstNews)
             <div class="col-lg-12 p-2">
                 <div class="card ">
