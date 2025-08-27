@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item text-center">
-                        <a class="nav-link active" aria-current="page" href="{{ route('news.index') }}">หน้าหลัก</a>
+                        <a class="nav-link {{ request()->routeIs('news.index') ? 'active' : '' }}" aria-current="page" href="{{ route('news.index') }}">หน้าหลัก</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">menu 2</a>
@@ -65,7 +65,7 @@
     
     <footer class="py-3 shadow-lg container-fluid">
         <ul class="nav justify-content-center pb-3">
-            <li class="nav-item"><a href="{{ route('news.index') }}" class="nav-link px-2 text-body-secondary">หน้าหลัก</a></li>
+            <li class="nav-item"><a href="{{ route('news.index') }}" class="nav-link px-2 text-body-secondary link-opacity-75-hover">หน้าหลัก</a></li>
             <!-- <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 2</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 3</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 4</a></li> -->
