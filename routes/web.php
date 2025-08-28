@@ -7,7 +7,8 @@ use Inertia\Inertia;
 use App\Http\Controllers\NewsController;
 
 Route::get('/', function () {
-    return redirect('/index');
+    return view('welcome');
+    // return redirect('/index');
 });
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
