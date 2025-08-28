@@ -25,8 +25,8 @@
                         </div>
                         <div class="col-lg-4 d-flex flex-column justify-content-between">
                             <div class="card-body">
-                                <a href="{{ route('news.show', $firstNews->id) }}" class="link-dark link-offset-2 link-underline-opacity-25 link-opacity-75-hover link-underline-opacity-100-hover">
-                                    <h3 class="card-title fw-bold">{{ $firstNews->title }}</h3>
+                                <a href="{{ route('news.show', $firstNews->id) }}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-body-emphasis">
+                                    <h3 class="card-title">{{ $firstNews->title }}</h3>
                                 </a>
                                 <p class="card-text">{{ $firstNews->description }}</p>
                             </div>
@@ -56,8 +56,7 @@
                         <img src="{{ $item->topic_image_url }}" class="card-img-top" alt="image">
                     </a>
                     <div class="card-body flex-grow-1">
-                        <a href="{{ route('news.show', $item->id) }}" class="link-dark link-offset-2 link-underline-opacity-25 
-                                      link-opacity-75-hover link-underline-opacity-100-hover">
+                        <a href="{{ route('news.show', $item->id) }}" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover text-body-emphasis">
                             <h5 class="card-title fw-bold">{{ $item->title }}</h5>
                         </a>
                         <p class="card-text"><small>{{ $item->description }}</small></p>
