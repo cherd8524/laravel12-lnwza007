@@ -7,9 +7,8 @@ use Inertia\Inertia;
 use App\Http\Controllers\NewsController;
 
 Route::get('/', function () {
-    return view('welcome');
-    // return redirect('/index');
-});
+    return Inertia::render('welcome');
+})->name('home');
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 // - Week 2
