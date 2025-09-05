@@ -34,7 +34,12 @@
                                 <div class="row">
                                     <div class="col col-lg-10">
                                         <i class="bi bi-clock me-2"></i>
-                                        {{ $firstNews->published_at->diffForHumans() }}
+                                        @if ($firstNews->published_at->diffInHours(now()) < 24)
+                                            {{ $firstNews->published_at->diffForHumans() }}
+                                        @else
+                                            {{ $firstNews->published_at->translatedFormat('j M') }}
+                                            {{ substr(($firstNews->published_at->year + 543), -2) }}
+                                        @endif
                                     </div>
                                     <div class="col col-lg-2 text-end">
                                         <a href="{{ $firstNews->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
@@ -65,7 +70,12 @@
                         <div class="row">
                             <div class="col col-lg-10">
                                 <i class="bi bi-clock me-2"></i>
-                                {{ $item->published_at->diffForHumans() }}
+                                @if ($firstNews->published_at->diffInHours(now()) < 24)
+                                    {{ $firstNews->published_at->diffForHumans() }}
+                                @else
+                                    {{ $firstNews->published_at->translatedFormat('j M') }}
+                                    {{ substr(($firstNews->published_at->year + 543), -2) }}
+                                @endif
                             </div>
                             <div class="col col-lg-2 text-end">
                                 <a href="{{ $item->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
