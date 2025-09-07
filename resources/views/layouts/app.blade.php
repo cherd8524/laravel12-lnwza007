@@ -136,6 +136,9 @@
                     <img src="https://s.isanook.com/sr/0/images/logo-sanook-n.svg" alt="sanook-logo" width="100">
                 </a>
             </div>
+            <div class="col-lg-12 text-center">
+                ทดสอบ CI/CD.
+            </div>
         </div>
         <div class="row px-lg-5">
             <div class="col-lg-6 col-12 mx-auto">
