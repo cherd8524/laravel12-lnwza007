@@ -26,6 +26,38 @@
 </head>
 <body class="min-vh-100 position-relative">
 
+    <style>
+        /* เพิ่มปุ่มลอย */
+        .floating-btn {
+            position: fixed;
+            bottom: 80px;
+            right: 5px;
+            z-index: 9999;
+            /* ให้ปุ่มลอยอยู่เหนือทุกวัตถุ */
+            background-color: #007bff;
+            line-height: 1;
+            color: white;
+            font-size: 50px;
+            font-weight: 900;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    
+        .floating-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <!-- ปุ่ม + ที่ลอยอยู่ -->
+    <a href="{{ route('news.create') }}">
+        <div class="floating-btn py-auto pb-2"> + </div>
+    </a>
+
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
             <path

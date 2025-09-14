@@ -3,6 +3,7 @@
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\NewsController;
 
@@ -102,8 +103,62 @@ Route::get('barchart', function () {
 // - Project 24/08/2025
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
+// Create
+Route::get('/news/sport/create', [NewsController::class, 'create'])->name('news.create');
+Route::post('/news/sport', [NewsController::class, 'store'])->name('news.store');
+
+// Read
 Route::get('/news/sport', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/sport/{id}', [NewsController::class, 'show'])->name('news.show');
+
+// Update
+Route::get('/news/sport/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+Route::put('/news/sport/{id}', [NewsController::class, 'update'])->name('news.update');
+
+// Delete
+Route::delete('/news/sport/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+// - FORM
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+Route::get('product-index', function () {
+    $products = Product::get();
+    return view('query-test', compact('products'));
+})->name("product.index");
+
+
+Route::get('product-form', function () {    
+    return view('product-form');
+})->name("product.form");
+
+Route::post('/product-submit', function (Request $request) {
+    $data = $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'required|string',
+        'price' => 'required|numeric|min:0',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+    ], 
+    [
+        'name.required' => 'กรุณากรอกชื่อสินค้า',
+        'description.required' => 'กรุณากรอกรายละเอียดสินค้า',
+        'price.required' => 'กรุณากรอกราคา',
+        'price.numeric' => 'ราคาต้องเป็นตัวเลข',
+        'image.image' => 'ไฟล์ต้องเป็นรูปภาพ',
+    ]);
+
+    // ตรวจสอบว่ามีการอัปโหลดรูปภาพ
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('uploads', 'public');
+        $url = Storage::url($imagePath);
+        $data["image"] =$url;
+    }
+
+    // บันทึกข้อมูลในฐานข้อมูล
+    Product::create($data);
+
+    return redirect()->route('product.index')->with('success', 'เพิ่มสินค้าแล้ว!');
+})->name('product.submit');
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 

@@ -17,7 +17,7 @@
             @if($firstNews)
             <div class="col-lg-12 p-2">
                 <div class="card ">
-                    <div class="row p-2">
+                    <div class="row p-2 position-relative">
                         <div class="col-lg-8 pe-lg-0">
                             <a href="{{ route('news.show', $firstNews->id) }}">
                                 <img src="{{ $firstNews->topic_image_url }}" class="img-fluid rounded" alt="image">
@@ -42,11 +42,21 @@
                                         @endif
                                     </div>
                                     <div class="col col-lg-2 text-end">
-                                        <a href="{{ $firstNews->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
-                                            <i class="bi bi-link-45deg fs-5"></i>
+                                        <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                                            <i class="bi bi-trash3"></i>
                                         </a>
+                                        <!-- <a href="{{ $firstNews->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
+                                            <i class="bi bi-link-45deg fs-5"></i>
+                                        </a> -->
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 justify-content-end position-absolute top-0 end-0 text-end">
+                            <div class="edit-box me-2">
+                                <a href="#" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
