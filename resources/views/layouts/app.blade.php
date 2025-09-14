@@ -141,15 +141,6 @@
                 ทดสอบ CI/CD.
             </div>
         </div>
-        <div class="row px-lg-5">
-            <div class="col-lg-6 col-12 mx-auto">
-                <div class="row m-0 p-0">
-                    <div class="col-lg-4 text-center"><i class="bi bi-person-fill"></i> เชิดศักดิ์ คำไล้ (67222420006)</div>
-                    <div class="col-lg-4 text-center"><i class="bi bi-person-fill"></i> เขมโยธิน สีทองเสือ (67222420010)</div>
-                    <div class="col-lg-4 text-center"><i class="bi bi-person-fill"></i> โชติกุล กาหลง (67222420015)</div>
-                </div>
-            </div>
-        </div>
     </footer>
     
 
