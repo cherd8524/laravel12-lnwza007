@@ -112,7 +112,7 @@ Route::get('/news/sport', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/sport/{id}', [NewsController::class, 'show'])->name('news.show');
 
 // Update
-Route::get('/news/sport/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+Route::get('/news/sport/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
 Route::put('/news/sport/{id}', [NewsController::class, 'update'])->name('news.update');
 
 // Delete

@@ -161,16 +161,12 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 3</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">menu 4</a></li> -->
         </ul>
-        <div class="row border-bottom pb-3 mb-3">
-            <div class="col-lg-12 text-center mb-3">
+        <div class="row pb-3">
+            <div class="col-lg-12 text-center">
                 เว็บไซต์นี้จัดทำขึ้นเพื่อใช้ในการศึกษาเท่านั้น เนื้อหาโดย : 
                 <a href="https://www.sanook.com/sport/" target="_blank">
                     <img src="https://s.isanook.com/sr/0/images/logo-sanook-n.svg" alt="sanook-logo" width="100">
                 </a>
-            </div>
-            <hr>
-            <div class="col-lg-12 text-center">
-                ทดสอบ CI/CD.
             </div>
         </div>
     </footer>

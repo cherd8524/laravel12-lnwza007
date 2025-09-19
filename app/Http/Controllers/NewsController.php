@@ -10,13 +10,14 @@ class NewsController extends Controller
     // - แสดงข่าวทั้งหมด
     public function index()
     {
-        // $news = News::all();
-        // $news = News::orderBy('created_at', 'desc')->get();
-        $news = News::where('news_type', 'sport')       // เลือกเฉพาะข่าว sport
-            ->orderBy('published_at', 'desc')                         // เรียงจากใหม่ → เก่า
+        $news = News::where('news_type', 'sport')     // เลือกเฉพาะข่าว sport
+            ->where('delPost', false)                 // เลือกเฉพาะที่ยังไม่ลบ
+            ->orderBy('published_at', 'desc')                           // เรียงจากใหม่ → เก่า
             ->get();
+
         return view('news.index', compact('news'));
     }
+
 
     // - แสดงข่าวเดี่ยว
     public function show($id)
@@ -47,7 +48,7 @@ class NewsController extends Controller
             'description' => 'required|string',
             'published_at' => 'required|date',
             'topic_image_url' => 'required|url',
-            'content' => 'nullable|array',   // เก็บ JSON array
+            'content' => 'nullable|string',
             'reference_url' => 'nullable|url',
         ]);
 
@@ -65,7 +66,7 @@ class NewsController extends Controller
             'description' => 'required|string',
             'published_at' => 'required|date',
             'topic_image_url' => 'required|url',
-            'content' => 'nullable|array',
+            'content' => 'nullable|string',
             'reference_url' => 'nullable|url',
         ]);
 
@@ -79,8 +80,8 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $article = News::findOrFail($id);
-        $article->delete();
+        $article->update(['delPost' => true]);
 
-        return redirect()->route('news.index')->with('success', 'ลบข่าวเรียบร้อยแล้ว');
+        return redirect()->route('news.index')->with('success', 'ย้ายข่าวไปที่ถังขยะเรียบร้อยแล้ว');
     }
 }

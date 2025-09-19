@@ -39,9 +39,8 @@
             </div>
 
             <div class="mb-3">
-                <label>เนื้อหาข่าว (HTML หรือ JSON)</label>
-                <textarea name="content"
-                    class="form-control">{{ is_array($article->content) ? json_encode($article->content) : $article->content }}</textarea>
+                <label>เนื้อหาข่าว (HTML)</label>
+                <textarea name="content" class="form-control" rows="6">{{ $article->content }}</textarea>
             </div>
 
             <div class="mb-3">

@@ -35,13 +35,13 @@
             </div>
 
             <div class="mb-3">
-                <label>เนื้อหาข่าว (HTML หรือ JSON)</label>
+                <label>เนื้อหาข่าว (HTML)</label>
                 <textarea name="content" class="form-control"></textarea>
             </div>
 
             <div class="mb-3">
                 <label>ลิงก์อ้างอิง</label>
-                <input type="url" name="reference_url" class="form-control">
+                <input type="url" name="reference_url" class="form-control" rows="6">
             </div>
 
             <button type="submit" class="btn btn-success">บันทึก</button>

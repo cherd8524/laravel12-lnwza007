@@ -9,6 +9,13 @@
             <h2 class="text-center fw-semibold">📢 ข่าวทั้งหมด</h2>
         </div>
 
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         @php
             $firstNews = $news->first();
         @endphp
@@ -42,9 +49,14 @@
                                         @endif
                                     </div>
                                     <div class="col col-lg-2 text-end">
-                                        <a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                                            <i class="bi bi-trash3"></i>
-                                        </a>
+                                        <form action="{{ route('news.destroy', $firstNews->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-link link-danger p-0"
+                                                onclick="return confirm('คุณแน่ใจว่าต้องการลบข่าวนี้?')">
+                                                <i class="bi bi-trash3"></i>
+                                            </button>
+                                        </form>
                                         <!-- <a href="{{ $firstNews->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
                                             <i class="bi bi-link-45deg fs-5"></i>
                                         </a> -->
@@ -54,8 +66,8 @@
                         </div>
                         <div class="d-flex w-100 justify-content-end position-absolute top-0 end-0 text-end">
                             <div class="edit-box me-2">
-                                <a href="#" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                                    <i class="bi bi-pencil-square"></i>
+                                <a href="{{ route('news.edit', $firstNews->id) }}" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                                    <i class="bi bi-pencil-square fs-4"></i>
                                 </a>
                             </div>
                         </div>
@@ -66,7 +78,7 @@
 
             @forelse($news->skip(1) as $item)
             <div class="col-lg-4 p-2 d-flex">
-                <div class="card p-2 h-100 d-flex flex-column">
+                <div class="card p-2 h-100 d-flex flex-column position-relative">
                     <a href="{{ route('news.show', $item->id) }}">
                         <img src="{{ $item->topic_image_url }}" class="card-img-top" alt="image">
                     </a>
@@ -80,19 +92,32 @@
                         <div class="row">
                             <div class="col col-lg-10">
                                 <i class="bi bi-clock me-2"></i>
-                                @if ($firstNews->published_at->diffInHours(now()) < 24)
-                                    {{ $firstNews->published_at->diffForHumans() }}
+                                @if ($item->published_at->diffInHours(now()) < 24)
+                                    {{ $item->published_at->diffForHumans() }}
                                 @else
-                                    {{ $firstNews->published_at->translatedFormat('j M') }}
-                                    {{ substr(($firstNews->published_at->year + 543), -2) }}
+                                    {{ $item->published_at->translatedFormat('j M') }}
+                                    {{ substr(($item->published_at->year + 543), -2) }}
                                 @endif
                             </div>
                             <div class="col col-lg-2 text-end">
-                                <a href="{{ $item->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
+                                <form action="{{ route('news.destroy', $item->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-link link-danger p-0"
+                                        onclick="return confirm('คุณแน่ใจว่าต้องการลบข่าวนี้?')">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </form>
+                                <!-- <a href="{{ $item->reference_url }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ข่าวต้นฉบับ">
                                     <i class="bi bi-link-45deg fs-5"></i>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
+                    </div>
+                    <div class="position-absolute top-0 end-0 mt-2 me-2">
+                        <a href="{{ route('news.edit', $item->id) }}" class="me-2 link-underline-opacity-0 link-opacity-75-hover link-light">
+                            <i class="bi bi-pencil-square fs-4"></i>
+                        </a>
                     </div>
                 </div>
             </div>

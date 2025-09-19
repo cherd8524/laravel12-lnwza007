@@ -14,10 +14,11 @@ class News extends Model
         'topic_image_url',
         'content',
         'reference_url',
+        'delPost',
     ];
     
     protected $casts = [
         'published_at' => 'datetime',
-        'content' => 'array',           // แปลง JSON เป็น array อัตโนมัติ
+        'delPost' => 'boolean',
     ];
 }
