@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\NewsController;
 
-$roles = ["admin", "guest", "teacher", "student"];
+$roles = ["admin", "guest"];
 
 Route::get('/', function() {
     return view("welcome/index");
