@@ -57,10 +57,17 @@
             background-color: #0056b3;
         }
     </style>
-    <!-- ปุ่ม + ที่ลอยอยู่ -->
-    <a href="{{ route('news.create') }}">
-        <div class="floating-btn py-auto pb-2"> + </div>
-    </a>
+
+    @auth
+        @if (auth()->user()->role == 'admin')
+
+            <!-- ปุ่ม + ที่ลอยอยู่ -->
+            <a href="{{ route('news.create') }}">
+                <div class="floating-btn py-auto pb-2"> + </div>
+            </a>
+
+        @endif
+    @endauth
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
