@@ -11,7 +11,7 @@ $roles = ["admin", "guest", "teacher", "student"];
 
 Route::get('/', function() {
     return view("welcome/index");
-});
+})->name('custom.first.page');
 
 Route::get('/laravel', function () {
     return Inertia::render('welcome');
