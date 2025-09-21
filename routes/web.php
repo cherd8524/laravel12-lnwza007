@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\NewsController;
 
+$roles = ["admin", "guest", "teacher", "student"];
+
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
@@ -104,8 +106,13 @@ Route::get('barchart', function () {
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
 // Create
-Route::get('/news/sport/create', [NewsController::class, 'create'])->name('news.create');
-Route::post('/news/sport', [NewsController::class, 'store'])->name('news.store');
+// Route::get('/news/sport/create', [NewsController::class, 'create'])->name('news.create');
+// Route::post('/news/sport', [NewsController::class, 'store'])->name('news.store');
+
+Route::middleware(['auth','role:admin'])->group(function () {
+    Route::get('/news/sport/create', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/news/sport', [NewsController::class, 'store'])->name('news.store');
+});
 
 // Read
 Route::get('/news/sport', [NewsController::class, 'index'])->name('news.index');
@@ -161,6 +168,18 @@ Route::post('/product-submit', function (Request $request) {
 })->name('product.submit');
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+Route::middleware(['auth','role:admin,teacher'])->group(function () {
+    Route::get('/teacher', function () {
+        return Inertia::render('teacher');
+    });
+});
+
+Route::middleware(['auth','role:admin,teacher'])->group(function () {
+    Route::get('/student', function () {
+        return view('student');
+    });
+});
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
