@@ -47,7 +47,7 @@ Route::get("/gallery/cat", function () {
 // - Week 3
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
-Route::get('/index', function () {
+Route::get('/active', function () {
     return view('active/index');
 })->name('index');
 
@@ -83,23 +83,23 @@ Route::get('query/sql', function () {
     $products = DB::select("SELECT * FROM products");
     // $products = DB::select("SELECT * FROM products WHERE price > 100");
     return view('query-test', compact('products'));
-});
+})->name('query.sql');
 
 Route::get('query/builder', function () {
     $products = DB::table('products')->get();
     // $products = DB::table('products')->where('price', '>', 100)->get();
     return view('query-test', compact('products'));
-});
+})->name('query.builder');
 
 Route::get('query/orm', function () {
     $products = Product::get();
     // $products = Product::where('price', '>', 100)->get();
     return view('query-test', compact('products'));
-});
+})->name('query.orm');
 
-Route::get('product/form', function () {
-    //
-})->name("product.form");
+// Route::get('product/form', function () {
+//     //
+// })->name("product.form");
 
 Route::get('barchart', function () {    
     return view('barchart');

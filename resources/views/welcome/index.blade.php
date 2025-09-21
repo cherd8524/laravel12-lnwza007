@@ -47,17 +47,91 @@
                     <h3>Quiz and Project</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://image.thum.io/get/width/600/{{ route('home') }}" class="card-img-top" alt="img-preview">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('home') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <a href="{{ route('home') }}" class="btn btn-primary">เยี่ยมชม</a>
+                            <h5 class="card-title mb-2">Index of Laravel</h5>
+                            <a href="{{ route('home') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('gallery') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Gallery</h5>
+                            <a href="{{ route('gallery') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('index') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Active</h5>
+                            <a href="{{ route('index') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('query.sql') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Query SQL</h5>
+                            <a href="{{ route('query.sql') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('query.builder') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Query Builder</h5>
+                            <a href="{{ route('query.builder') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('query.orm') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Query ORM</h5>
+                            <a href="{{ route('query.orm') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('product.index') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Product</h5>
+                            <a href="{{ route('product.index') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('barchart') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Barchart</h5>
+                            <a href="{{ route('barchart') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://image.thum.io/get/width/600/{{ route('news.index') }}" class="card-img-top" alt="web-preview">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">News Sport</h5>
+                            <a href="{{ route('news.index') }}" class="btn btn-primary" target="_blank">เยี่ยมชม</a>
+                        </div>
+                    </div>
+                </div>
+    
             </div>
+            
         </div>
     </div>
 
