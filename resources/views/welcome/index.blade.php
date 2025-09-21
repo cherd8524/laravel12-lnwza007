@@ -53,7 +53,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('home') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Index of Laravel</h5>
-                            <a href="{{ route('home') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('home') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('gallery') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Gallery</h5>
-                            <a href="{{ route('gallery') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('gallery') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('index') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Active</h5>
-                            <a href="{{ route('index') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('index') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('query.sql') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Query SQL</h5>
-                            <a href="{{ route('query.sql') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('query.sql') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div> -->
@@ -89,7 +89,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('query.builder') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Query Builder</h5>
-                            <a href="{{ route('query.builder') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('query.builder') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div> -->
@@ -98,7 +98,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('query.orm') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Query ORM</h5>
-                            <a href="{{ route('query.orm') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('query.orm') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div> -->
@@ -107,7 +107,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('product.index') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Product</h5>
-                            <a href="{{ route('product.index') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('product.index') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('barchart') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">Barchart</h5>
-                            <a href="{{ route('barchart') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('barchart') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                         <img src="https://image.thum.io/get/width/600/{{ route('news.index') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
                             <h5 class="card-title mb-2">News Sport</h5>
-                            <a href="{{ route('news.index') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
+                            <a href="{{ route('news.index') }}" class="btn btn-outline-primary">เยี่ยมชม</a>
                         </div>
                     </div>
                 </div>

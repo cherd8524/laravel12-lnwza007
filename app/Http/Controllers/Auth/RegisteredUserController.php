@@ -28,7 +28,28 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    // public function store(Request $request): RedirectResponse
+    // {
+    //     $request->validate([
+    //         'name' => 'required|string|max:255',
+    //         'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
+    //         'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    //     ]);
+
+    //     $user = User::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password),
+    //     ]);
+
+    //     event(new Registered($user));
+
+    //     Auth::login($user);
+
+    //     return redirect()->intended(route('dashboard', absolute: false));
+    // }
+
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -46,6 +67,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return Inertia::location(route('news.index'));
     }
 }

@@ -176,11 +176,11 @@ Route::post('/product-submit', function (Request $request) {
 
 Route::middleware(['auth','role:admin,teacher'])->group(function () {
     Route::get('/teacher', function () {
-        return Inertia::render('teacher');
+        return view('teacher');
     });
 });
 
-Route::middleware(['auth','role:admin,teacher'])->group(function () {
+Route::middleware(['auth','role:admin,student'])->group(function () {
     Route::get('/student', function () {
         return view('student');
     });
