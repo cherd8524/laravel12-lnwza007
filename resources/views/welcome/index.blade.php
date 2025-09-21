@@ -47,7 +47,7 @@
                     <h3>Quiz and Project</h3>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="row row-cols-1 row-cols-md-3 g-3 px-lg-5">
                 <div class="col-lg-3">
                     <div class="card h-100">
                         <img src="https://image.thum.io/get/width/600/{{ route('home') }}" class="card-img-top" alt="web-preview">
