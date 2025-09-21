@@ -106,9 +106,6 @@ Route::get('barchart', function () {
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
 // Create
-// Route::get('/news/sport/create', [NewsController::class, 'create'])->name('news.create');
-// Route::post('/news/sport', [NewsController::class, 'store'])->name('news.store');
-
 Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/news/sport/create', [NewsController::class, 'create'])->name('news.create');
     Route::post('/news/sport', [NewsController::class, 'store'])->name('news.store');
@@ -119,11 +116,15 @@ Route::get('/news/sport', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/sport/{id}', [NewsController::class, 'show'])->name('news.show');
 
 // Update
-Route::get('/news/sport/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
-Route::put('/news/sport/{id}', [NewsController::class, 'update'])->name('news.update');
+Route::middleware(['auth','role:admin'])->group(function () {
+    Route::get('/news/sport/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::put('/news/sport/{id}', [NewsController::class, 'update'])->name('news.update');
+});
 
 // Delete
-Route::delete('/news/sport/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+Route::middleware(['auth','role:admin'])->group(function () {
+    Route::delete('/news/sport/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+});
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 // - FORM
