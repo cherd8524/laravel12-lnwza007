@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <!-- <div class="col-lg-3">
                     <div class="card h-100">
                         <img src="https://image.thum.io/get/width/600/{{ route('query.sql') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
@@ -83,8 +83,8 @@
                             <a href="{{ route('query.sql') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3">
+                </div> -->
+                <!-- <div class="col-lg-3">
                     <div class="card h-100">
                         <img src="https://image.thum.io/get/width/600/{{ route('query.builder') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
@@ -92,8 +92,8 @@
                             <a href="{{ route('query.builder') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3">
+                </div> -->
+                <!-- <div class="col-lg-3">
                     <div class="card h-100">
                         <img src="https://image.thum.io/get/width/600/{{ route('query.orm') }}" class="card-img-top" alt="web-preview">
                         <div class="card-body">
@@ -101,7 +101,7 @@
                             <a href="{{ route('query.orm') }}" class="btn btn-outline-primary" target="_blank">เยี่ยมชม</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-lg-3">
                     <div class="card h-100">
                         <img src="https://image.thum.io/get/width/600/{{ route('product.index') }}" class="card-img-top" alt="web-preview">
