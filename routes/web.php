@@ -9,7 +9,11 @@ use App\Http\Controllers\NewsController;
 
 $roles = ["admin", "guest", "teacher", "student"];
 
-Route::get('/', function () {
+Route::get('/', function() {
+    return view("welcome/index");
+});
+
+Route::get('/laravel', function () {
     return Inertia::render('welcome');
 })->name('home');
 
