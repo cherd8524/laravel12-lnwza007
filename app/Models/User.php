@@ -46,4 +46,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function license()
+    {
+        return $this->hasOne(License::class, 'user_id', 'id');
+    }
+
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class, 'user_id', 'id');
+    }
+
+
 }

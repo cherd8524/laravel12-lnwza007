@@ -6,8 +6,35 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\LicenseController;  
+use App\Http\Controllers\UserController; 
+use App\Http\Controllers\VehicleController; 
 
 $roles = ["admin", "guest"];
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+// - Middleware
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+
+Route::middleware(['auth','role:admin,teacher'])->group(function () {
+    Route::get('/teacher', function () {
+        return view('teacher');
+    });
+});
+
+Route::middleware(['auth','role:admin,student'])->group(function () {
+    Route::get('/student', function () {
+        return view('student');
+    });
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('dashboard', function () {
+        return Inertia::render('dashboard');
+    })->name('dashboard');
+});
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
 Route::get('/', function() {
     return view("welcome/index");
@@ -173,24 +200,14 @@ Route::post('/product-submit', function (Request $request) {
 })->name('product.submit');
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------->>
+// - Relationship
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
-Route::middleware(['auth','role:admin,teacher'])->group(function () {
-    Route::get('/teacher', function () {
-        return view('teacher');
-    });
-});
+Route::resource('license', LicenseController::class);
+Route::resource('user', UserController::class);
+Route::resource('vehicle', VehicleController::class);
 
-Route::middleware(['auth','role:admin,student'])->group(function () {
-    Route::get('/student', function () {
-        return view('student');
-    });
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
-});
+// ---------------------------------------------------------------------------------------------------------------------------------------------------->>
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
